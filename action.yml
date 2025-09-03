@@ -1,0 +1,16 @@
+name: Bump Tag Action
+description: Bump the Git tag version
+branding:
+  icon: tag
+  color: gray-dark
+inputs:
+  numbers_only:
+    required: false
+    default: false
+    description: Return only the tag number (v1.0.0 -> 1.0.0)
+outputs:
+  tag:
+    description: The new tag version
+runs:
+  using: node20
+  main: main.js

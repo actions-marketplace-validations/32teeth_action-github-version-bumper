@@ -1,0 +1,10 @@
+{
+  "name": "action-github-version-bumper",
+  "description": "GitHub Action to bump version tags",
+  "author": "32teeth",
+  "main": "index.js",
+  "version": "v1.0.7",
+  "dependencies": {
+    "@actions/core": "^1.11.0"
+  }
+}

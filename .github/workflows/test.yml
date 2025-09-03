@@ -1,0 +1,24 @@
+name: Test Bump Tag Action
+
+on:
+  pull_request:
+    types: [closed]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test Bump Tag Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Bump Tag Action
+        uses: ./
+        id: bump_tag
+        with:
+          onlyTagNumber: true # Match the input name in your action
+          tag: "v1.0.0" # Provide a tag input for testing
+      - name: Output New Tag
+        run: echo "New tag version is ${{ steps.bump_tag.outputs.tag }}"
+      - name: Verify Tag Format
+        run: |
+          test "1.0.1" = "${{steps.bump_tag.outputs.tag}}"
