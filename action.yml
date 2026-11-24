@@ -4,6 +4,9 @@ branding:
   icon: tag
   color: gray-dark
 inputs:
+  tag:
+    required: false
+    description: Tag to bump (for example, v1.0.0)
   numbers_only:
     required: false
     default: false
@@ -12,5 +15,5 @@ outputs:
   tag:
     description: The new tag version
 runs:
-  using: node20
+  using: node24
   main: main.js
